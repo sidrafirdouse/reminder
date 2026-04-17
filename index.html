@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Reminder Alert 💖</title>
+
 <style>
 body {
   margin: 0;
@@ -12,7 +13,7 @@ body {
   text-align: center;
 }
 
-/* Floating hearts */
+/* Hearts */
 .heart {
   position: absolute;
   animation: floatUp 6s linear infinite;
@@ -55,7 +56,7 @@ button {
 
 <body>
 
-<button onclick="openCard()">Tap me 😚</button>
+<button id="btn">Tap me 😚</button>
 
 <div class="card" id="card">
   <h2>🚨 Reminder Alert 🚨</h2>
@@ -68,10 +69,12 @@ button {
 </div>
 
 <script>
-function openCard(){
+// Fix click issue
+document.getElementById("btn").addEventListener("click", function() {
   document.getElementById("card").classList.add("show");
-}
+});
 
+// Floating hearts
 function heart(){
   const h = document.createElement("div");
   h.className="heart";
